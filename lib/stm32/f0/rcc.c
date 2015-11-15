@@ -557,6 +557,7 @@ void rcc_clock_setup_in_hse16_out_16mhz(void)
 }
 
 
+
 void rcc_clock_setup_in_hsi_out_16mhz(void)
 {
 	rcc_osc_on(HSI);
@@ -677,27 +678,6 @@ void rcc_clock_setup_in_hsi_out_48mhz(void)
 	rcc_apb1_frequency = 48000000;
 	rcc_ahb_frequency = 48000000;
 }
-void rcc_clock_setup_in_hse16_out_48mhz(void)
-{
-	rcc_css_enable();
-	rcc_osc_on(HSE);
-	rcc_wait_for_osc_ready(HSE);
-	rcc_set_sysclk_source(HSE);
-	rcc_set_hpre(RCC_CFGR_HPRE_NODIV);
-	rcc_set_ppre(RCC_CFGR_PPRE_NODIV);
-	flash_set_ws(FLASH_ACR_LATENCY_024_048MHZ);
-	/* 16MHz * 12 = 48MHz */
-	rcc_set_pll_multiplication_factor(RCC_CFGR_PLLMUL_MUL6);
-
-	RCC_CFGR &= ~RCC_CFGR_PLLSRC;
-
-	rcc_osc_on(PLL);
-	rcc_wait_for_osc_ready(PLL);
-	rcc_set_sysclk_source(PLL);
-
-	rcc_apb1_frequency = 48000000;
-	rcc_ahb_frequency = 48000000;
-}
 
 void rcc_clock_setup_in_hsi48_out_48mhz(void)
 {
@@ -714,7 +694,5 @@ void rcc_clock_setup_in_hsi48_out_48mhz(void)
 	rcc_apb1_frequency = 48000000;
 	rcc_ahb_frequency = 48000000;
 }
-
-
 /**@}*/
 
