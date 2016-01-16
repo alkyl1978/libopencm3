@@ -1,6 +1,8 @@
 README
 ======
 
+[![Gitter channel](https://badges.gitter.im/libopencm3/discuss.svg)](https://gitter.im/libopencm3/discuss)
+
 The libopencm3 project aims to create an open-source firmware library for
 various ARM Cortex-M3 microcontrollers.
 
@@ -134,13 +136,9 @@ https://github.com/libopencm3/libopencm3-examples
 Installation
 ------------
 
-    $ make install
-
-This will install the library into `/usr/local`. (permissions permitting)
-
-If you want to install it elsewhere, use the following syntax:
-
-    $ make DESTDIR=/opt/libopencm3 install
+Simply pass -I and -L flags to your own project.  See the libopencm3-examples
+repository for an example of using this library as a git submodule, the most
+popular method of use.
 
 It is strongly advised that you do not attempt to install this library to any
 path inside your toolchain itself.  While this means you don't have to include
@@ -148,7 +146,6 @@ any `-I` or `-L` flags in your projects, it is _very_ easy to confuse a multilib
 linker from picking the right versions of libraries.  Common symptoms are
 hardfaults caused by branches into arm code.  You can use `arm-none-eabi-objdump`
 to check for this in your final elf.  You have been warned.
-
 
 Coding style and development guidelines
 ---------------------------------------
@@ -164,10 +161,11 @@ Public License (LGPL), version 3 or later.
 
 See COPYING.GPL3 and COPYING.LGPL3 for details.
 
-IRC
----
+Community
+---------
 
- * You can reach us in #libopencm3 on the freenode IRC network.
+ * Our [![Gitter channel](https://badges.gitter.im/libopencm3/discuss.svg)](https://gitter.im/libopencm3/discuss)
+ * Our IRC channel on the freenode IRC network is called #libopencm3
 
 Mailing lists
 -------------
