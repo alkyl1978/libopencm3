@@ -546,10 +546,10 @@ void rcc_clock_setup_in_hsi_out_8mhz(void)
 
 void rcc_clock_setup_in_hse16_out_16mhz(void)
 {
-	rcc_osc_on(HSI);   // включаем внутренний генератор
-	rcc_wait_for_osc_ready(HSI); // ожидаем включения
-	rcc_set_sysclk_source(HSI);  // включаем тактирование от внутреннего генератора
-	rcc_osc_off(PLL);            // выключаем PLL
+	rcc_osc_on(RCC_HSI);   // включаем внутренний генератор
+	rcc_wait_for_osc_ready(RCC_HSI); // ожидаем включения
+	rcc_set_sysclk_source(RCC_HSI);  // включаем тактирование от внутреннего генератора
+	rcc_osc_off(RCC_PLL);            // выключаем PLL
 	rcc_set_hpre(RCC_CFGR_HPRE_NODIV);
 	rcc_set_ppre(RCC_CFGR_PPRE_NODIV);
 	flash_set_ws(FLASH_ACR_LATENCY_000_024MHZ);
