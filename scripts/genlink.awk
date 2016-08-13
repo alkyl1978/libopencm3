@@ -31,9 +31,15 @@ BEGIN {
 	gsub(/\r$/,"");
 
 	tmp = "^"$1"$";
+<<<<<<< HEAD
 	gsub(/?/, ".", tmp);
 	gsub(/*/, ".*", tmp);
 	gsub(/+/, ".+", tmp);
+=======
+	gsub(/\?/, ".", tmp);
+	gsub(/\*/, ".*", tmp);
+	gsub(/\+/, ".+", tmp);
+>>>>>>> lib/master
 	tolower(tmp);
 
 	if (PAT ~ tmp) {
