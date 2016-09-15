@@ -535,6 +535,10 @@ void rcc_clock_setup_in_hsi_out_8mhz(void)
 	rcc_ahb_frequency = 8000000;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> vps/master
 void rcc_clock_setup_in_hse16_out_16mhz(void)
 {
 	rcc_osc_on(RCC_HSI);   // включаем внутренний генератор
@@ -549,6 +553,11 @@ void rcc_clock_setup_in_hse16_out_16mhz(void)
 
 
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> lib/master
+>>>>>>> vps/master
 void rcc_clock_setup_in_hsi_out_16mhz(void)
 {
 	rcc_osc_on(RCC_HSI);
